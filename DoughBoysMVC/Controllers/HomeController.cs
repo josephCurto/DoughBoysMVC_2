@@ -4,33 +4,46 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-//using DoughBoysMVC.Models;
+using DoughBoysMVC.Models;
 
 namespace DoughBoysMVC.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View();
         }
 
-        public ActionResult Menu()
+        public ViewResult Menu()
         {
             return View();
         }
 
-        public ActionResult PreOrder()
+        [HttpGet]
+        public ViewResult PreOrder()
         {
             return View();
         }
 
-        public ActionResult Questions()
+        [HttpPost]
+        public ViewResult PreOrder(Customer customer)
+        {
+            CustomerRepository.AddCustomer(customer);
+            return View("Confirmation", customer);
+        }
+
+        public ViewResult Questions()
         {
             return View();
         }
 
-        public ActionResult AboutUs()
+        public ViewResult AboutUs()
+        {
+            return View();
+        }
+
+        public ViewResult Confirmation()
         {
             return View();
         }

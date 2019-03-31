@@ -1,4 +1,4 @@
-﻿
+﻿@model DoughBoysMVC.Models.Customer
 @{
     ViewData["Title"] = "PreOrder";
 }
@@ -35,28 +35,28 @@
         Orders must be placed 24 hours prior to your preferred pick up date, and must be a half-dozen or larger.
     </p>
 
-    <form action="/PreOrderPage.html" method="get">
+    <form asp-action="PreOrder" method="post">
         <div class="formRow">
             <div class="formLeftCol">
-                First Name*
-                <input type="text" name="firstName">
+                <label asp-for="FirstName">First Name*</label>
+                <input asp-for="FirstName" />
             </div>
 
             <div class="formRightCol">
-                Last Name*
-                <input type="text" name="lastName">
+                <label asp-for="LastName">Last Name</label>
+                <input asp-for="LastName" />
             </div>
         </div>
 
         <div class="formRow">
             <div class="formLeftCol">
-                Phone Number*
-                <input type="text" name="email">
+                <label asp-for="PhoneNo">Phone Numer*</label>
+                <input asp-for="PhoneNo" />
             </div>
 
             <div class="formRightCol">
-                Email*
-                <input type="text" name="quantity"> 
+                <label asp-for="Email">Email*</label>
+                <input asp-for="Email" />
             </div>
         </div>
 
@@ -76,7 +76,7 @@
             If you are ready to place your order, please click the button below.
         </p>
         <div class="formRow">
-            <input type="submit" value="Pre-Order Now">
+            <button type="submit" class="preOrderBtn">Pre-Order Now</button>
         </div>
         
     </form>
