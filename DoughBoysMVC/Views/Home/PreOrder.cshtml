@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "PreOrder";
+}
+
+<div class="navBar">
+    <a href="Home" class="navLogo"><img src="~/images/logo.png"></a>
+    <div id="navHeader">
+        <ul>
+            <li><a asp-action="Index">Home</a></li>
+            <li><a asp-action="Menu">Menu</a></li>
+            <li class="activeItem"><a asp-action="PreOrder">Pre-Order</a></li>
+            <li><a asp-action="Questions">FAQ</a></li>
+            <li><a asp-action="AboutUs">About Us</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--
+    TODO:
+    -Connect fields with models
+    -Create rules for ordering: 
+        only one type of doughnut per order, as many doughnuts as customer wants in that order
+        specify pick up times
+    -Doughnut flavors drop down?
+--->
+<div class="preOrderPage">
+    <h1 class="mainText">Pre-Order and Catering </h1>
+    
+    <p>
+        Our Pre-Ordering and Catering is available during our normal working hours. 
+    </p>
+    
+    <p>
+        Orders must be placed 24 hours prior to your preferred pick up date, and must be a half-dozen or larger.
+    </p>
+
+    <form action="/PreOrderPage.html" method="get">
+        <div class="formRow">
+            <div class="formLeftCol">
+                First Name*
+                <input type="text" name="firstName">
+            </div>
+
+            <div class="formRightCol">
+                Last Name*
+                <input type="text" name="lastName">
+            </div>
+        </div>
+
+        <div class="formRow">
+            <div class="formLeftCol">
+                Phone Number*
+                <input type="text" name="email">
+            </div>
+
+            <div class="formRightCol">
+                Email*
+                <input type="text" name="quantity"> 
+            </div>
+        </div>
+
+        <div class="formRow">
+            <div class="formLeftCol">
+                Flavor:
+                <input type="checkbox" name="flavor">
+            </div>
+            
+            <div class="formRightCol">
+                Preferred Pick-up:
+                <input type="date" name="pickupdate"> <input type="time" name="pickuptime">
+            </div>
+        </div>
+
+        <p>
+            If you are ready to place your order, please click the button below.
+        </p>
+        <div class="formRow">
+            <input type="submit" value="Pre-Order Now">
+        </div>
+        
+    </form>
+</div>
